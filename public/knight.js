@@ -1,14 +1,26 @@
+// var questionsBank = [
+//   ['hiss', 'The green snake gave a long hiss.'],
+//   ['trump', 'I heard the big elephant give a loud trump.'],
+//   ['running', 'The dog is running in the park.'],
+//   ['roar', 'The hungry lion gave a mighty roar.'],
+//   ['jungle', 'Many tall trees grow in the jungle.'],
+//   ['monkey', 'The monkey swung from the branch.'],
+//   ['chatter', 'I can hear the birds chatter in the morning.'],
+//   ['creeping', 'A cat is creeping through the tall grass.'],
+//   ['leaping', 'The frog is leaping onto a wet leaf.'],
+//   ['fierce', 'The tiger looks very fierce and strong.']
+// ]
 var questionsBank = [
-  ['hiss', 'The green snake gave a long hiss.'],
-  ['trump', 'I heard the big elephant give a loud trump.'],
-  ['running', 'The dog is running in the park.'],
-  ['roar', 'The hungry lion gave a mighty roar.'],
-  ['jungle', 'Many tall trees grow in the jungle.'],
-  ['monkey', 'The monkey swung from the branch.'],
-  ['chatter', 'I can hear the birds chatter in the morning.'],
-  ['creeping', 'A cat is creeping through the tall grass.'],
-  ['leaping', 'The frog is leaping onto a wet leaf.'],
-  ['fierce', 'The tiger looks very fierce and strong.']
+  ['car', 'I will go to town in my vintage car.'],
+  ['land', 'Mrs Wishy Washy has a big land for the animals.'],
+  ['way', 'Brr-rrr, Brr-rrr said the bear all the way to town.'],
+  ['late', 'Hurry up or we will be late shouts Peter.'],
+  ['ride', 'The helicopter ride was amazing.'],
+  ['pool', 'I jumped into the swimming pool excitedly.'],
+  ['fly', 'The birds fly out of the big windows.'],
+  ['sky', 'Dan flew up into the sky.'],
+  ['town', 'That man will be in town till tomorrow morning.'],
+  ['bulldozer', 'The big yellow bulldozer moved the heavy dirt.'],
 ]
 
 questionsBank = Phaser.Actions.Shuffle(questionsBank);
