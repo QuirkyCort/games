@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Racer</title>
+
+    <style>
+      #renderCanvas {
+        width: 800px;
+        height: 600px;
+        touch-action: none;
+      }
+    </style>
+
+    <script src="../cannon/0.6.2/cannon.js"></script>
+    <script src="../babylon/4.1.0/babylon.js"></script>
+    <script src="../babylon/4.1.0/babylonjs.loaders.min.js"></script>
+    <script src="../babylon/4.1.0/babylon.gui.min.js"></script>
+    <script src="../pep/0.4.3/pep.min.js"></script>
+    <script src="../record.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div style="font-family: 'Roboto Mono', cursive; position: absolute; top: -1000px;">&nbsp;</div>
+
+    <canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
+    <script src="racerQuestions.js"></script>
+    <script src="racerModels.js"></script>
+    <script src="racerGUI.js"></script>
+    <script src="racer.js"></script>
+  </body>
+</html>
