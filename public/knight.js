@@ -1,4 +1,4 @@
-var questionsBank =[
+var questionsBank = [
   ['hiss', 'The green snake gave a long hiss.'],
   ['trump', 'I heard the big elephant give a loud trump.'],
   ['running', 'The dog is running in the park.'],
