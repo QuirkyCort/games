@@ -68,6 +68,8 @@ const synth = window.speechSynthesis;
 
 const BACKGROUND_SPEED = [100/1000, 250/1000, 400/1000];
 const BADDIES_START = 1200;
+// const FONT = 'New Rocker';
+const FONT = 'Playpen Sans';
 
 var state = {
   state: 0,
@@ -76,6 +78,8 @@ var state = {
 
   INTRO: 0,
   RUN: 20,
+  SLOW: 25,
+  CONTINUE: 27,
   LOSE: 30,
   COMPLETED: 40,
   GAME_OVER: 9999,
@@ -110,6 +114,7 @@ function preload () {
   this.load.image('ghost', 'ghost.png');
   this.load.image('tryAgain', 'tryAgain.png');
   this.load.image('sound', 'sound.png');
+  this.load.image('submit', 'submit.png');
 
   this.load.spritesheet('fullscreen', 'fullscreen.png', { frameWidth: 64, frameHeight: 64 });
 
@@ -219,13 +224,13 @@ function create () {
 
   // Game Over
   var gameOverBackground = this.add.image(0, 0, 'gameOver');
-  var gameOverText1 = this.add.text(0, -120, '- Your Score -', { fontFamily: 'New Rocker', fontSize: '32px', fill: '#000' })
+  var gameOverText1 = this.add.text(0, -120, '- Your Score -', { fontFamily: FONT, fontSize: '32px', fill: '#000' })
   gameOverText1.setOrigin(0.5, 0.5);
-  var gameOverText2 = this.add.text(0, -60, '0', { fontFamily: 'New Rocker', fontSize: '32px', fill: '#000' })
+  var gameOverText2 = this.add.text(0, -60, '0', { fontFamily: FONT, fontSize: '32px', fill: '#000' })
   gameOverText2.setOrigin(0.5, 0.5);
-  var gameOverText3 = this.add.text(0, 0, 'Knight Rank', { fontFamily: 'New Rocker', fontSize: '32px', fill: '#000' })
+  var gameOverText3 = this.add.text(0, 0, 'Knight Rank', { fontFamily: FONT, fontSize: '32px', fill: '#000' })
   gameOverText3.setOrigin(0.5, 0.5);
-  var gameOverText4 = this.add.text(0, 40, '', { fontFamily: 'New Rocker', fontSize: '32px', fill: '#ff0000' })
+  var gameOverText4 = this.add.text(0, 40, '', { fontFamily: FONT, fontSize: '32px', fill: '#ff0000' })
   gameOverText4.setOrigin(0.5, 0.5);
   tryAgain = this.add.image(0, 120, 'tryAgain').setInteractive();
   tryAgain.setOrigin(0.5, 0.5);
@@ -242,27 +247,32 @@ function create () {
     btn.setOrigin(0.5, 0.5);
     btn.on('pointerdown', clickedAnswer);
     btn.letter = letter;
-    let btnText = scene.add.text(0, -2, letter, { fontFamily: 'New Rocker', fontSize: '50px', fill: '#000' });
+    let btnText = scene.add.text(0, -2, letter, { fontFamily: FONT, fontSize: '50px', fill: '#000' });
     btnText.setOrigin(0.5, 0.5);
 
     return scene.add.container(x, y, [btn, btnText]);
   }
 
   var questionBackground = this.add.image(0, -150, 'questionBackground');
-  var soundBtn = this.add.image(-250, -130, 'sound').setInteractive();
+  var soundBtn = this.add.image(-260, -130, 'sound').setInteractive();
   soundBtn.setOrigin(0.5, 0.5);
   soundBtn.on('pointerdown', function() {
     utterThis = new SpeechSynthesisUtterance(questionsBank[score][0] + '. ' + questionsBank[score][1] + '. Spell ' + questionsBank[score][0]);
     utterThis.rate = 0.8;
     synth.speak(utterThis);
   });
-  answerText = this.add.text(0, -130, '', { fontFamily: 'New Rocker', fontSize: '50px', fill: '#000'});
+
+  var submitBtn = this.add.image(260, -130, 'submit').setInteractive();
+  submitBtn.setOrigin(0.5, 0.5);
+  submitBtn.on('pointerdown', checkAnswer);
+
+  answerText = this.add.text(0, -130, '', { fontFamily: FONT, fontSize: '50px', fill: '#000'});
   answerText.setOrigin(0.5, 0.5);
 
   var btns = [];
   let letters1 = 'abcdefghi';
   let letters2 = 'jklmnopqr';
-  let letters3 = 'stuvwxyz';
+  let letters3 = 'stuvwxyz<';
   for (let i=0; i<letters1.length; i++) {
     btns.push(addBtn(this, letters1[i], -275 + 70 * i, -20));
   }
@@ -272,7 +282,7 @@ function create () {
   for (let i=0; i<letters3.length; i++) {
     btns.push(addBtn(this, letters3[i], -275 + 70 * i, 120));
   }
-  question = this.add.container(360, -410, [questionBackground, soundBtn, answerText, ...btns]);
+  question = this.add.container(360, -410, [questionBackground, soundBtn, submitBtn, answerText, ...btns]);
 
   // Set up tween animations
   intro.tweenDrop = scene.tweens.create({
@@ -319,20 +329,43 @@ function restart() {
 }
 
 function clickedAnswer () {
-  let text = answerText.text + this.letter
-  answerText.setText(text);
+  // count filled letters
+  let letterCount = 0;
+  let text = answerText.text;
+  for (let i=0; i<text.length; i++) {
+    if (text[i] != '_') {
+      letterCount++;
+    }
+  }
 
-  let correctAnswerText = questionsBank[score][0];
-  if (text == correctAnswerText) {
+  // Backspace
+  if (this.letter == '<') {
+    if (letterCount > 0) {
+      text = text.substring(0, letterCount - 1) + '_' + text.substring(letterCount);
+    }
+  
+
+  // Character
+  } else {
+    if (letterCount < questionsBank[score][0].length) {
+      text = text.substring(0, letterCount) + this.letter + text.substring(letterCount + 1);
+    }
+  }
+
+  answerText.setText(text);
+}
+
+function checkAnswer() {
+  let text = answerText.text;
+  if (text.includes('_')) {
+    return;
+  }
+
+  if (text == questionsBank[score][0]) {
     answerState = 'correct';
     score++;
   } else {
-    for (let i=0; i<text.length; i++) {
-      if (text[i] != questionsBank[score][0][i]) {
-        answerState = 'wrong';
-        return;
-      }
-    }
+    answerState = 'wrong';
   }
 }
 
@@ -355,6 +388,19 @@ function update (time, delta) {
   var stateTime = deltaTime - state.startTime;
   var scaledDelta = delta * timeScale;
 
+  // Move background and baddies
+  function updateWorld() {
+    for (let a=0; a<3; a++) {  // Move background
+      for (let b=0; b<2; b++) {
+        backgrounds[a][b].x -= BACKGROUND_SPEED[a] * scaledDelta * timeScale;
+        if (backgrounds[a][b].x < -400) {
+          backgrounds[a][b].x += 1600;
+        }
+      }
+    }
+
+    baddies[baddyType].x -= BACKGROUND_SPEED[2] * scaledDelta * timeScale; // Move baddy
+  }
 
   // Intro screen
   if (state.state == state.INTRO) {
@@ -373,42 +419,51 @@ function update (time, delta) {
 
     ninja.anims.play('run', true);
 
-    for (let a=0; a<3; a++) {  // Move background
-      for (let b=0; b<2; b++) {
-        backgrounds[a][b].x -= BACKGROUND_SPEED[a] * scaledDelta * timeScale;
-        if (backgrounds[a][b].x < -400) {
-          backgrounds[a][b].x += 1600;
-        }
-      }
-    }
-
-    baddies[baddyType].x -= BACKGROUND_SPEED[2] * scaledDelta * timeScale; // Move baddy
+    updateWorld();
 
     // Slow down time and move question and answers down
-    if (baddies[baddyType].x < 600 && baddies[baddyType].x > 250 && answerState == 'pending') {
-      timeScale = slowTimeScale;
-      ninja.anims.msPerFrame = 1000 / (30 * timeScale);
-      if (question.y < 180) {
-        question.y += 40;
+    if (baddies[baddyType].x < 600) {
+      answerState = 'pending'
+      let placeholderText = '';
+      for (let i=0; i<questionsBank[score][0].length; i++) {
+        placeholderText += '_';
       }
-      if (themes[themeIndex].volume > 0) {
-        themes[themeIndex].volume -= 0.02001;
-      }
-      if (themes[themeIndex].volume < 0) {
-        themes[themeIndex].volume = 0;
-        const utterThis = new SpeechSynthesisUtterance(questionsBank[score][0] + '. ' + questionsBank[score][1] + '. Spell ' + questionsBank[score][0]);
-        utterThis.rate = 0.8;
-        synth.speak(utterThis);
-      }
-    } else {
-      timeScale = 1;
-      ninja.anims.msPerFrame = 1000 / 30;
-      if (question.y > -410) {
-        question.y -= 40;
-      }
-      if (themes[themeIndex].volume < 0.8) {
-        themes[themeIndex].volume += 0.02001;
-      }
+      answerText.setText(placeholderText);
+      state.setState(state.SLOW);
+    }
+
+  // Slow down time and wait for answer
+  } else if (state.state == state.SLOW) {
+    timeScale = slowTimeScale;
+    ninja.anims.msPerFrame = 1000 / (30 * timeScale);
+    if (question.y < 180) {
+      question.y += 40;
+    }
+    if (themes[themeIndex].volume > 0) {
+      themes[themeIndex].volume -= 0.02001;
+    }
+    if (themes[themeIndex].volume < 0) {
+      themes[themeIndex].volume = 0;
+      const utterThis = new SpeechSynthesisUtterance(questionsBank[score][0] + '. ' + questionsBank[score][1] + '. Spell ' + questionsBank[score][0]);
+      utterThis.rate = 0.8;
+      synth.speak(utterThis);
+    }
+
+    if (answerState != 'pending' || baddies[baddyType].x < 300) {
+      state.setState(state.CONTINUE);
+    }
+
+    updateWorld();
+
+  // Continue running and check if answer is correct
+  } else if (state.state == state.CONTINUE) {
+    timeScale = 1;
+    ninja.anims.msPerFrame = 1000 / 30;
+    if (question.y > -410) {
+      question.y -= 40;
+    }
+    if (themes[themeIndex].volume < 0.8) {
+      themes[themeIndex].volume += 0.02001;
       if (themes[themeIndex].volume > 0.8) {
         themes[themeIndex].volume = 0.8;
       }
@@ -427,12 +482,15 @@ function update (time, delta) {
 
     if (baddies[baddyType].x < -50 || baddies[baddyType].y > 800) { // Reset baddy
       resetBaddies();
-      answerState = 'pending';
       answerText.setText('');
       if (score >= SCORE_CAP) {
         state.setState(state.COMPLETED);
+      } else {
+        state.setState(state.RUN);
       }
     }
+
+    updateWorld();
 
   // Lose and gets knocked away
   } else if (state.state == state.LOSE) {
