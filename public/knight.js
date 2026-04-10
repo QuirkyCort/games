@@ -13,7 +13,7 @@
 var questionsBank = [
   ['car', 'I will go to town in my vintage car.'],
   ['land', 'Mrs Wishy Washy has a big land for the animals.'],
-  ['way', 'Brr-rrr, Brr-rrr said the bear all the way to town.'],
+  ['way', 'Brr, Brr said the bear all the way to town.'],
   ['late', 'Hurry up or we will be late shouts Peter.'],
   ['ride', 'The helicopter ride was amazing.'],
   ['pool', 'I jumped into the swimming pool excitedly.'],
