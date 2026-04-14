@@ -23,18 +23,44 @@
 //   ['bulldozer', 'The big yellow bulldozer moved the heavy dirt.'],
 // ]
 
-var questionsBank = [ // Spelling 5. Week 7. 5 May
-  ['six', 'I borrowed six books from the library.'],
-  ['will', 'Hurry up or you will be late said mother.'],
-  ['sticks', 'Ants are crawling on my sticks.'],
-  ['five', 'I drank five glasses of water just now.'],
-  ['zebra', 'The tiger invited the zebra to tea.'],
-  ['four', 'He snapped up the bees, three, four, five.!'],
-  ['crawling', 'The baby is crawling to her father.'],
-  ['sneezed', 'Kerchoo! sneezed the crocodile.'],
-  ['anteater', 'The anteater is a mammal.'],
-  ['sweet as honey', 'This drink is sweet as honey.'],
+var questionsBank = [ // Spelling 3. Week 5. 21 Apr
+  ['van', 'The delivery van is here to deliver our parcel'],
+  ['truck', 'the truck is carrying a lot of heavy sand'],
+  ['train', 'The MRT train is very busy in the weekends'],
+  ['motor bike', 'My father rides a motor bike to work every day'],
+  ['bicycle', 'I enjoy riding on my bicycle around the park'],
+  ['cruise', 'We went on a big cruise ship for our holiday'],
+  ['helicopter', 'The helicopter flies high above the trees'],
+  ['fire-engine', 'My baby brother has a red fire-engine truck'],
+  ['vintage car', 'Look at that beautiful old vintage car'],
+  ['aeroplane', 'The aeroplane is landing at the airport'],
 ]
+
+// var questionsBank = [ // Spelling 4. Week 6. 28 Apr
+//   ['one', 'I can balance on one foot'],
+//   ['come', 'Come to tea said the crocodile'],
+//   ['your', 'raise your hand when you want to speak said Miss Anita'],
+//   ['two', 'Tom brings two dollars to school today'],
+//   ['ants', 'The ants are crawling everywhere in the kitchen'],
+//   ['tea', 'the lion is looking for its tea'],
+//   ['three', 'the scary monster has three eyes'],
+//   ['beehive', 'there is a beehive in that big tree'],
+//   ['fly out', 'the bees fly out of their hives to look for food'],
+//   ['open the door', 'help! open the door! the little girl screamed.'],
+// ]
+
+// var questionsBank = [ // Spelling 5. Week 7. 5 May
+//   ['six', 'I borrowed six books from the library.'],
+//   ['will', 'Hurry up or you will be late said mother.'],
+//   ['sticks', 'Ants are crawling on my sticks.'],
+//   ['five', 'I drank five glasses of water just now.'],
+//   ['zebra', 'The tiger invited the zebra to tea.'],
+//   ['four', 'He snapped up the bees, three, four, five.!'],
+//   ['crawling', 'The baby is crawling to her father.'],
+//   ['sneezed', 'Kerchoo! sneezed the crocodile.'],
+//   ['anteater', 'The anteater is a mammal.'],
+//   ['sweet as honey', 'This drink is sweet as honey.'],
+// ]
 
 questionsBank = Phaser.Actions.Shuffle(questionsBank);
 const SCORE_CAP = questionsBank.length;
@@ -283,17 +309,17 @@ function create () {
   answerText.setOrigin(0.5, 0.5);
 
   var btns = [];
-  let letters1 = 'abcdefghi';
-  let letters2 = 'jklmnopqr';
-  let letters3 = 'stuvwxyz<';
+  let letters1 = 'abcdefghij';
+  let letters2 = 'klmnopqrst';
+  let letters3 = 'uvwxyz- <';
   for (let i=0; i<letters1.length; i++) {
-    btns.push(addBtn(this, letters1[i], -275 + 70 * i, -20));
+    btns.push(addBtn(this, letters1[i], -290 + 65 * i, -20));
   }
   for (let i=0; i<letters2.length; i++) {
-    btns.push(addBtn(this, letters2[i], -275 + 70 * i, 50));
+    btns.push(addBtn(this, letters2[i], -290 + 65 * i, 50));
   }
   for (let i=0; i<letters3.length; i++) {
-    btns.push(addBtn(this, letters3[i], -275 + 70 * i, 120));
+    btns.push(addBtn(this, letters3[i], -290 + 65 * i, 120));
   }
   question = this.add.container(360, -410, [questionBackground, soundBtn, submitBtn, answerText, ...btns]);
 
