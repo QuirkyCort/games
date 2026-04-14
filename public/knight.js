@@ -1,4 +1,4 @@
-// var questionsBank = [
+// var questionsBank = [ // Spelling 1. Week 3. 7 Apr
 //   ['hiss', 'The green snake gave a long hiss.'],
 //   ['trump', 'I heard the big elephant give a loud trump.'],
 //   ['running', 'The dog is running in the park.'],
@@ -10,17 +10,30 @@
 //   ['leaping', 'The frog is leaping onto a wet leaf.'],
 //   ['fierce', 'The tiger looks very fierce and strong.']
 // ]
-var questionsBank = [
-  ['car', 'I will go to town in my vintage car.'],
-  ['land', 'Mrs Wishy Washy has a big land for the animals.'],
-  ['way', 'Brr, Brr said the bear all the way to town.'],
-  ['late', 'Hurry up or we will be late shouts Peter.'],
-  ['ride', 'The helicopter ride was amazing.'],
-  ['pool', 'I jumped into the swimming pool excitedly.'],
-  ['fly', 'The birds fly out of the big windows.'],
-  ['sky', 'Dan flew up into the sky.'],
-  ['town', 'That man will be in town till tomorrow morning.'],
-  ['bulldozer', 'The big yellow bulldozer moved the heavy dirt.'],
+// var questionsBank = [ // Spelling 2. Week 4. 14 Apr
+//   ['car', 'I will go to town in my vintage car.'],
+//   ['land', 'Mrs Wishy Washy has a big land for the animals.'],
+//   ['way', 'Brr, Brr said the bear all the way to town.'],
+//   ['late', 'Hurry up or we will be late shouts Peter.'],
+//   ['ride', 'The helicopter ride was amazing.'],
+//   ['pool', 'I jumped into the swimming pool excitedly.'],
+//   ['fly', 'The birds fly out of the big windows.'],
+//   ['sky', 'Dan flew up into the sky.'],
+//   ['town', 'That man will be in town till tomorrow morning.'],
+//   ['bulldozer', 'The big yellow bulldozer moved the heavy dirt.'],
+// ]
+
+var questionsBank = [ // Spelling 5. Week 7. 5 May
+  ['six', 'I borrowed six books from the library.'],
+  ['will', 'Hurry up or you will be late said mother.'],
+  ['sticks', 'Ants are crawling on my sticks.'],
+  ['five', 'I drank five glasses of water just now.'],
+  ['zebra', 'The tiger invited the zebra to tea.'],
+  ['four', 'He snapped up the bees, three, four, five.!'],
+  ['crawling', 'The baby is crawling to her father.'],
+  ['sneezed', 'Kerchoo! sneezed the crocodile.'],
+  ['anteater', 'The anteater is a mammal.'],
+  ['sweet as honey', 'This drink is sweet as honey.'],
 ]
 
 questionsBank = Phaser.Actions.Shuffle(questionsBank);
