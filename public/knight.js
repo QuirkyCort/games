@@ -23,31 +23,31 @@
 //   ['bulldozer', 'The big yellow bulldozer moved the heavy dirt.'],
 // ]
 
-var questionsBank = [ // Spelling 3. Week 5. 21 Apr
-  ['van', 'The delivery van is here to deliver our parcel'],
-  ['truck', 'the truck is carrying a lot of heavy sand'],
-  ['train', 'The MRT train is very busy in the weekends'],
-  ['motor bike', 'My father rides a motor bike to work every day'],
-  ['bicycle', 'I enjoy riding on my bicycle around the park'],
-  ['cruise', 'We went on a big cruise ship for our holiday'],
-  ['helicopter', 'The helicopter flies high above the trees'],
-  ['fire-engine', 'My baby brother has a red fire-engine truck'],
-  ['vintage car', 'Look at that beautiful old vintage car'],
-  ['aeroplane', 'The aeroplane is landing at the airport'],
-]
-
-// var questionsBank = [ // Spelling 4. Week 6. 28 Apr
-//   ['one', 'I can balance on one foot'],
-//   ['come', 'Come to tea said the crocodile'],
-//   ['your', 'raise your hand when you want to speak said Miss Anita'],
-//   ['two', 'Tom brings two dollars to school today'],
-//   ['ants', 'The ants are crawling everywhere in the kitchen'],
-//   ['tea', 'the lion is looking for its tea'],
-//   ['three', 'the scary monster has three eyes'],
-//   ['beehive', 'there is a beehive in that big tree'],
-//   ['fly out', 'the bees fly out of their hives to look for food'],
-//   ['open the door', 'help! open the door! the little girl screamed.'],
+// var questionsBank = [ // Spelling 3. Week 5. 21 Apr
+//   ['van', 'The delivery van is here to deliver our parcel'],
+//   ['truck', 'the truck is carrying a lot of heavy sand'],
+//   ['train', 'The MRT train is very busy in the weekends'],
+//   ['motor bike', 'My father rides a motor bike to work every day'],
+//   ['bicycle', 'I enjoy riding on my bicycle around the park'],
+//   ['cruise', 'We went on a big cruise ship for our holiday'],
+//   ['helicopter', 'The helicopter flies high above the trees'],
+//   ['fire-engine', 'My baby brother has a red fire-engine truck'],
+//   ['vintage car', 'Look at that beautiful old vintage car'],
+//   ['aeroplane', 'The aeroplane is landing at the airport'],
 // ]
+
+var questionsBank = [ // Spelling 4. Week 6. 28 Apr
+  ['one', 'I can balance on one foot'],
+  ['come', 'Come to tea said the crocodile'],
+  ['your', 'raise your hand when you want to speak said Miss Anita'],
+  ['two', 'Tom brings two dollars to school today'],
+  ['ants', 'The ants are crawling everywhere in the kitchen'],
+  ['tea', 'the lion is looking for its tea'],
+  ['three', 'the scary monster has three eyes'],
+  ['beehive', 'there is a beehive in that big tree'],
+  ['fly out', 'the bees fly out of their hives to look for food'],
+  ['open the door', 'help! open the door! the little girl screamed.'],
+]
 
 // var questionsBank = [ // Spelling 5. Week 7. 5 May
 //   ['six', 'I borrowed six books from the library.'],
