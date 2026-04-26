@@ -298,6 +298,7 @@ function create () {
   soundBtn.on('pointerdown', function() {
     utterThis = new SpeechSynthesisUtterance(questionsBank[score][0] + '. ' + questionsBank[score][1] + '. Spell ' + questionsBank[score][0]);
     utterThis.rate = 0.8;
+    synth.cancel();
     synth.speak(utterThis);
   });
 
@@ -485,6 +486,7 @@ function update (time, delta) {
       themes[themeIndex].volume = 0;
       const utterThis = new SpeechSynthesisUtterance(questionsBank[score][0] + '. ' + questionsBank[score][1] + '. Spell ' + questionsBank[score][0]);
       utterThis.rate = 0.8;
+      synth.cancel();
       synth.speak(utterThis);
     }
 
