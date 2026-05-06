@@ -36,18 +36,18 @@
 //   ['aeroplane', 'The aeroplane is landing at the airport'],
 // ]
 
-var questionsBank = [ // Spelling 4. Week 6. 28 Apr
-  ['one', 'I can balance on one foot'],
-  ['come', 'Come to tea said the crocodile'],
-  ['your', 'raise your hand when you want to speak said Miss Anita'],
-  ['two', 'Tom brings two dollars to school today'],
-  ['ants', 'The ants are crawling everywhere in the kitchen'],
-  ['tea', 'the lion is looking for its tea'],
-  ['three', 'the scary monster has three eyes'],
-  ['beehive', 'there is a beehive in that big tree'],
-  ['fly out', 'the bees fly out of their hives to look for food'],
-  ['open the door', 'help! open the door! the little girl screamed.'],
-]
+// var questionsBank = [ // Spelling 4. Week 6. 28 Apr
+//   ['one', 'I can balance on one foot'],
+//   ['come', 'Come to tea said the crocodile'],
+//   ['your', 'raise your hand when you want to speak said Miss Anita'],
+//   ['two', 'Tom brings two dollars to school today'],
+//   ['ants', 'The ants are crawling everywhere in the kitchen'],
+//   ['tea', 'the lion is looking for its tea'],
+//   ['three', 'the scary monster has three eyes'],
+//   ['beehive', 'there is a beehive in that big tree'],
+//   ['fly out', 'the bees fly out of their hives to look for food'],
+//   ['open the door', 'help! open the door! the little girl screamed.'],
+// ]
 
 // var questionsBank = [ // Spelling 5. Week 7. 5 May
 //   ['six', 'I borrowed six books from the library.'],
@@ -60,6 +60,32 @@ var questionsBank = [ // Spelling 4. Week 6. 28 Apr
 //   ['sneezed', 'Kerchoo! sneezed the crocodile.'],
 //   ['anteater', 'The anteater is a mammal.'],
 //   ['sweet as honey', 'This drink is sweet as honey.'],
+// ]
+
+var questionsBank = [ // Spelling 6. Week 8. 12 May
+  ['get', 'the people ran to get the giant some honey'],
+  ['hit', 'I\'ll hit you with my bommy-knocker. roared the hungy giant.'],
+  ['look', 'look right and left before you cross the road'],
+  ['said', 'please whisper in the library said the librarian.'],
+  ['want', 'I want some bread roared the giant'],
+  ['some', 'get me some bread now roared the giant again'],
+  ['hungry', 'adam was so hungry his stomach rumbled in class'],
+  ['bread', 'I had some bread for breakfast'],
+  ['giant', 'the dinosaur is a gentle giant'],
+  ['honey', 'the giant was angry as he could not get any honey.'],
+]
+
+// var questionsBank = [ // Spelling 7. Week 9. 19 May
+//   ['way', 'ow! he roared all the way home'],
+//   ['them', 'the hungry giant shouted at them loudly'],
+//   ['about', 'I\'ll be home at about seven tonight said dad'],
+//   ['found', 'the people found a beehive'],
+//   ['shouted', 'the giant shouted at the top of his voice'],
+//   ['yelled', 'the rude passenger yelled at the driver'],
+//   ['dashed', 'everyone dashed for the train before the door closed.'],
+//   ['butter', 'I put some butter on my bread'],
+//   ['screamed', 'ouch! Ron screamed in pain as he fell off his bicycle'],
+//   ['zoomed everywhere', 'when the beehive broke, the bees zoomed everywhere.'],
 // ]
 
 questionsBank = Phaser.Actions.Shuffle(questionsBank);
