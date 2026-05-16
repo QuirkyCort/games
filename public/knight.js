@@ -168,18 +168,26 @@ function preload () {
 
   loadSeries('background', 1, 3);
   loadSeries('Run', 1, 9);
-  loadSeries('spider_walk', 1, 2);
-  loadSeries('Dragon-Idle_', 0, 7)
   this.load.image('Jump', 'Jump.png');
   this.load.image('Dead', 'Dead0.png');
   this.load.image('gameOver', 'gameOver.png');
   this.load.image('intro', 'intro.png');
   this.load.image('questionBackground', 'questionBackground.png');
-  this.load.image('snake', 'snakelava.png');
-  this.load.image('ghost', 'ghost.png');
   this.load.image('tryAgain', 'tryAgain.png');
   this.load.image('sound', 'sound.png');
   this.load.image('submit', 'submit.png');
+
+  // Baddies
+  // loadSeries('spider_walk', 1, 2);
+  // this.load.image('snake', 'snakelava.png');
+  // this.load.image('ghost', 'ghost.png');
+  loadSeries('Dragon-Idle_', 0, 7)
+  loadSeries('zombie_male_idle_', 1, 15);
+  loadSeries('zombie_female_idle_', 1, 15);
+  loadSeries('jack_idle_', 1, 10);
+  this.load.spritesheet('goblin_male_idle', 'goblin_male_idle.png', { frameWidth: 200, frameHeight: 200 });
+  this.load.spritesheet('goblin_female_idle', 'goblin_female_idle.png', { frameWidth: 200, frameHeight: 200 });
+  this.load.spritesheet('goblin_chief_idle', 'goblin_chief_idle.png', { frameWidth: 200, frameHeight: 200 });
 
   this.load.spritesheet('fullscreen', 'fullscreen.png', { frameWidth: 64, frameHeight: 64 });
 
@@ -245,15 +253,69 @@ function create () {
   ninja.body.enable = false;
 
   // Baddies
+  // this.anims.create({
+  //   key: 'spider',
+  //   frames: [
+  //     { key: 'spider_walk1' },
+  //     { key: 'spider_walk2' }
+  //   ],
+  //   frameRate: 10,
+  //   repeat: -1
+  // });
+  let frames = [];
+  for (let i=1; i<=15; i++) {
+    frames.push({ key: 'zombie_male_idle_' + i });
+  }
   this.anims.create({
-    key: 'spider',
-    frames: [
-      { key: 'spider_walk1' },
-      { key: 'spider_walk2' }
-    ],
+    key: 'zombie_male',
+    frames: frames,
     frameRate: 10,
     repeat: -1
   });
+
+  frames = [];
+  for (let i=1; i<=15; i++) {
+    frames.push({ key: 'zombie_female_idle_' + i });
+  }
+  this.anims.create({
+    key: 'zombie_female',
+    frames: frames,
+    frameRate: 10,
+    repeat: -1
+  });
+
+  frames = [];
+  for (let i=1; i<=10; i++) {
+    frames.push({ key: 'jack_idle_' + i });
+  }
+  this.anims.create({
+    key: 'jack',
+    frames: frames,
+    frameRate: 10,
+    repeat: -1
+  });
+
+  this.anims.create({
+    key: 'goblin_male',
+    frames: 'goblin_male_idle',
+    frameRate: 10,
+    repeat: -1
+  });
+
+  this.anims.create({
+    key: 'goblin_female',
+    frames: 'goblin_female_idle',
+    frameRate: 10,
+    repeat: -1
+  });
+
+  this.anims.create({
+    key: 'goblin_chief',
+    frames: 'goblin_chief_idle',
+    frameRate: 10,
+    repeat: -1
+  });
+
   this.anims.create({
     key: 'dragon',
     frames: [
@@ -269,9 +331,15 @@ function create () {
     frameRate: 20,
     repeat: -1
   });
-  baddies.push(this.physics.add.sprite(BADDIES_START, 510, 'spider').play('spider'));
-  baddies.push(this.physics.add.sprite(BADDIES_START, 461, 'snake'));
-  baddies.push(this.physics.add.sprite(BADDIES_START, 480, 'ghost'));
+  // baddies.push(this.physics.add.sprite(BADDIES_START, 510, 'spider').play('spider'));
+  // baddies.push(this.physics.add.sprite(BADDIES_START, 461, 'snake'));
+  // baddies.push(this.physics.add.sprite(BADDIES_START, 480, 'ghost'));
+  baddies.push(this.physics.add.sprite(BADDIES_START, 460, 'zombie_male').play('zombie_male'));
+  baddies.push(this.physics.add.sprite(BADDIES_START, 460, 'zombie_female').play('zombie_female'));
+  baddies.push(this.physics.add.sprite(BADDIES_START, 460, 'jack').play('jack'));
+  baddies.push(this.physics.add.sprite(BADDIES_START, 475, 'goblin_male').play('goblin_male'));
+  baddies.push(this.physics.add.sprite(BADDIES_START, 475, 'goblin_female').play('goblin_female'));
+  baddies.push(this.physics.add.sprite(BADDIES_START, 475, 'goblin_chief').play('goblin_chief'));
   baddies.push(this.physics.add.sprite(BADDIES_START, 450, 'dragon').play('dragon'));
   baddies.forEach(function(baddy) {
     baddy.body.setAllowGravity(false);
