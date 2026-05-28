@@ -1,81 +1,82 @@
-// var questionsBank = [ // Spelling 1. Week 3. 7 Apr
-//   ['hiss', 'The green snake gave a long hiss.'],
-//   ['trump', 'I heard the big elephant give a loud trump.'],
-//   ['running', 'The dog is running in the park.'],
-//   ['roar', 'The hungry lion gave a mighty roar.'],
-//   ['jungle', 'Many tall trees grow in the jungle.'],
-//   ['monkey', 'The monkey swung from the branch.'],
-//   ['chatter', 'I can hear the birds chatter in the morning.'],
-//   ['creeping', 'A cat is creeping through the tall grass.'],
-//   ['leaping', 'The frog is leaping onto a wet leaf.'],
-//   ['fierce', 'The tiger looks very fierce and strong.']
-// ]
-// var questionsBank = [ // Spelling 2. Week 4. 14 Apr
-//   ['car', 'I will go to town in my vintage car.'],
-//   ['land', 'Mrs Wishy Washy has a big land for the animals.'],
-//   ['way', 'Brr, Brr said the bear all the way to town.'],
-//   ['late', 'Hurry up or we will be late shouts Peter.'],
-//   ['ride', 'The helicopter ride was amazing.'],
-//   ['pool', 'I jumped into the swimming pool excitedly.'],
-//   ['fly', 'The birds fly out of the big windows.'],
-//   ['sky', 'Dan flew up into the sky.'],
-//   ['town', 'That man will be in town till tomorrow morning.'],
-//   ['bulldozer', 'The big yellow bulldozer moved the heavy dirt.'],
-// ]
+const p1t2w3 = [ // Spelling 1. Week 3. 7 Apr
+  ['hiss', 'The green snake gave a long hiss.'],
+  ['trump', 'I heard the big elephant give a loud trump.'],
+  ['running', 'The dog is running in the park.'],
+  ['roar', 'The hungry lion gave a mighty roar.'],
+  ['jungle', 'Many tall trees grow in the jungle.'],
+  ['monkey', 'The monkey swung from the branch.'],
+  ['chatter', 'I can hear the birds chatter in the morning.'],
+  ['creeping', 'A cat is creeping through the tall grass.'],
+  ['leaping', 'The frog is leaping onto a wet leaf.'],
+  ['fierce', 'The tiger looks very fierce and strong.']
+]
 
-// var questionsBank = [ // Spelling 3. Week 5. 21 Apr
-//   ['van', 'The delivery van is here to deliver our parcel'],
-//   ['truck', 'the truck is carrying a lot of heavy sand'],
-//   ['train', 'The MRT train is very busy in the weekends'],
-//   ['motor bike', 'My father rides a motor bike to work every day'],
-//   ['bicycle', 'I enjoy riding on my bicycle around the park'],
-//   ['cruise', 'We went on a big cruise ship for our holiday'],
-//   ['helicopter', 'The helicopter flies high above the trees'],
-//   ['fire-engine', 'My baby brother has a red fire-engine truck'],
-//   ['vintage car', 'Look at that beautiful old vintage car'],
-//   ['aeroplane', 'The aeroplane is landing at the airport'],
-// ]
+const p1t2w4 = [ // Spelling 2. Week 4. 14 Apr
+  ['car', 'I will go to town in my vintage car.'],
+  ['land', 'Mrs Wishy Washy has a big land for the animals.'],
+  ['way', 'Brr, Brr said the bear all the way to town.'],
+  ['late', 'Hurry up or we will be late shouts Peter.'],
+  ['ride', 'The helicopter ride was amazing.'],
+  ['pool', 'I jumped into the swimming pool excitedly.'],
+  ['fly', 'The birds fly out of the big windows.'],
+  ['sky', 'Dan flew up into the sky.'],
+  ['town', 'That man will be in town till tomorrow morning.'],
+  ['bulldozer', 'The big yellow bulldozer moved the heavy dirt.'],
+]
 
-// var questionsBank = [ // Spelling 4. Week 6. 28 Apr
-//   ['one', 'I can balance on one foot'],
-//   ['come', 'Come to tea said the crocodile'],
-//   ['your', 'raise your hand when you want to speak said Miss Anita'],
-//   ['two', 'Tom brings two dollars to school today'],
-//   ['ants', 'The ants are crawling everywhere in the kitchen'],
-//   ['tea', 'the lion is looking for its tea'],
-//   ['three', 'the scary monster has three eyes'],
-//   ['beehive', 'there is a beehive in that big tree'],
-//   ['fly out', 'the bees fly out of their hives to look for food'],
-//   ['open the door', 'help! open the door! the little girl screamed.'],
-// ]
+const p1t2w5 = [ // Spelling 3. Week 5. 21 Apr
+  ['van', 'The delivery van is here to deliver our parcel'],
+  ['truck', 'the truck is carrying a lot of heavy sand'],
+  ['train', 'The MRT train is very busy in the weekends'],
+  ['motor bike', 'My father rides a motor bike to work every day'],
+  ['bicycle', 'I enjoy riding on my bicycle around the park'],
+  ['cruise', 'We went on a big cruise ship for our holiday'],
+  ['helicopter', 'The helicopter flies high above the trees'],
+  ['fire-engine', 'My baby brother has a red fire-engine truck'],
+  ['vintage car', 'Look at that beautiful old vintage car'],
+  ['aeroplane', 'The aeroplane is landing at the airport'],
+]
 
-// var questionsBank = [ // Spelling 5. Week 7. 5 May
-//   ['six', 'I borrowed six books from the library.'],
-//   ['will', 'Hurry up or you will be late said mother.'],
-//   ['sticks', 'Ants are crawling on my sticks.'],
-//   ['five', 'I drank five glasses of water just now.'],
-//   ['zebra', 'The tiger invited the zebra to tea.'],
-//   ['four', 'He snapped up the bees, three, four, five.!'],
-//   ['crawling', 'The baby is crawling to her father.'],
-//   ['sneezed', 'Kerchoo! sneezed the crocodile.'],
-//   ['anteater', 'The anteater is a mammal.'],
-//   ['sweet as honey', 'This drink is sweet as honey.'],
-// ]
+const p1t2w6 = [ // Spelling 4. Week 6. 28 Apr
+  ['one', 'I can balance on one foot'],
+  ['come', 'Come to tea said the crocodile'],
+  ['your', 'raise your hand when you want to speak said Miss Anita'],
+  ['two', 'Tom brings two dollars to school today'],
+  ['ants', 'The ants are crawling everywhere in the kitchen'],
+  ['tea', 'the lion is looking for its tea'],
+  ['three', 'the scary monster has three eyes'],
+  ['beehive', 'there is a beehive in that big tree'],
+  ['fly out', 'the bees fly out of their hives to look for food'],
+  ['open the door', 'help! open the door! the little girl screamed.'],
+]
 
-// var questionsBank = [ // Spelling 6. Week 8. 12 May
-//   ['get', 'the people ran to get the giant some honey'],
-//   ['hit', 'I\'ll hit you with my bommy-knocker. roared the hungy giant.'],
-//   ['look', 'look right and left before you cross the road'],
-//   ['said', 'please whisper in the library said the librarian.'],
-//   ['want', 'I want some bread roared the giant'],
-//   ['some', 'get me some bread now roared the giant again'],
-//   ['hungry', 'adam was so hungry his stomach rumbled in class'],
-//   ['bread', 'I had some bread for breakfast'],
-//   ['giant', 'the dinosaur is a gentle giant'],
-//   ['honey', 'the giant was angry as he could not get any honey.'],
-// ]
+const p1t2w7 = [ // Spelling 5. Week 7. 5 May
+  ['six', 'I borrowed six books from the library.'],
+  ['will', 'Hurry up or you will be late said mother.'],
+  ['sticks', 'Ants are crawling on my sticks.'],
+  ['five', 'I drank five glasses of water just now.'],
+  ['zebra', 'The tiger invited the zebra to tea.'],
+  ['four', 'He snapped up the bees, three, four, five.!'],
+  ['crawling', 'The baby is crawling to her father.'],
+  ['sneezed', 'Kerchoo! sneezed the crocodile.'],
+  ['anteater', 'The anteater is a mammal.'],
+  ['sweet as honey', 'This drink is sweet as honey.'],
+]
 
-var questionsBank = [ // Spelling 7. Week 9. 19 May
+const p1t2w8 = [ // Spelling 6. Week 8. 12 May
+  ['get', 'the people ran to get the giant some honey'],
+  ['hit', 'I\'ll hit you with my bommy-knocker. roared the hungy giant.'],
+  ['look', 'look right and left before you cross the road'],
+  ['said', 'please whisper in the library said the librarian.'],
+  ['want', 'I want some bread roared the giant'],
+  ['some', 'get me some bread now roared the giant again'],
+  ['hungry', 'adam was so hungry his stomach rumbled in class'],
+  ['bread', 'I had some bread for breakfast'],
+  ['giant', 'the dinosaur is a gentle giant'],
+  ['honey', 'the giant was angry as he could not get any honey.'],
+]
+
+const p1t2w9 = [ // Spelling 7. Week 9. 19 May
   ['way', 'ow! he roared all the way home'],
   ['them', 'the hungry giant shouted at them loudly'],
   ['about', 'I\'ll be home at about seven tonight said dad'],
@@ -87,6 +88,112 @@ var questionsBank = [ // Spelling 7. Week 9. 19 May
   ['screamed', 'ouch! Ron screamed in pain as he fell off his bicycle'],
   ['zoomed everywhere', 'when the beehive broke, the bees zoomed everywhere.'],
 ]
+
+const p1t3w2 = [
+  ['went', 'Ali went to the park to play with his friends.'],
+  ['jumped', 'The frightened cat jumped over the tall wooden fence.'],
+  ['found', 'Sam found a shiny coin hiding in the green grass.'],
+  ['said', 'Look at my new book! said the happy boy.'],
+  ['screamed', 'Help me! screamed the little girl when she saw the big spider.'],
+  ['angry', 'The angry giant stomped his loud, heavy feet.'],
+  ['them', 'The teacher gave them a gold star for their hard work.'],
+  ['about', 'Mary read a story about a brave little mouse.'],
+  ['away', 'The fast rabbit ran away from the barking dog.'],
+  ['people', 'There were many people waiting at the busy bus stop.']
+]
+
+const p1t3w3 = [
+  ['long', 'We have to cross a long bridge to reach the island.'],
+  ['down', 'The busy ants went down the narrow tunnel.'],
+  ['Queen', 'The King and Queen have arrived at the palace.'],
+  ['jelly', 'The Queen is nibbling on her jelly.'],
+  ['hurry', 'The Queen is hungry. Hurry, hurry, hurry!'],
+  ['scurry', 'The goats scurry across the bridge.'],
+  ['royal', 'The Queen is laying her royal eggs.'],
+  ['slowly', 'The old lady crossed the road slowly.'],
+  ['dark tunnel', 'The hardworking ants carried the jelly down the dark tunnel.'],
+  ['out they came', 'One by one, out they came.']
+]
+
+const p1t3w4 = [
+  ['sip', 'I will take a small sip of cold water.'],
+  ['zoom', 'Watch the fast car zoom down the road.'],
+  ['bite', 'Take a big bite of the crunchy apple.'],
+  ['chew', 'You must chew your food slowly.'],
+  ['smash', 'Be careful not to smash the glass bowl.'],
+  ['rubbish', 'Please pick up the rubbish and put it in the bin.'],
+  ['slurp', 'It is not polite to slurp your hot soup.'],
+  ['stroll', 'We like to take a quiet stroll in the garden.'],
+  ['gobble', 'The hungry puppy would gobble up its food.'],
+  ['nibble', 'A tiny mouse likes to nibble on cheese.'],
+]
+
+const p1t3w5 = [
+  ['ask', 'I ask my teacher some questions.'],
+  ['old', 'The old man walks slowly.'],
+  ['hug', 'My parents hug me to make me feel better.'],
+  ['cry', 'The babies cry because they are hungry.'],
+  ['home', 'Please go straight home after school.'],
+  ['family', 'There are five people in my family.'],
+  ['parents', 'My parents go to work early in the morning.'],
+  ['mother', 'My mother wears beautiful dresses.'],
+  ['father', 'My father reads the newspaper in the morning.'],
+  ['siblings', 'I am an only child. I do not have siblings.']
+]
+
+const p1t3w6 = [
+    ['loud', 'The baby is loud when she cries.'],
+    ['carry', 'Please help me carry my books.'],
+    ['aunt', 'My aunt is my fathers sister.'],
+    ['uncle', 'My uncle is my fathers brother.'],
+    ['laugh', 'The children laugh at the jokes.']
+    ['cousins', 'Uncle John and Aunt Penny have three children. They are my cousins.'],
+    ['grandparents', 'My fathers parents are my grandparents.'],
+    ['sister', 'My sister likes to wear pink dresses.'],
+    ['brother', 'My brother is a Boy Scout.'],
+    ['bonding time', 'Every Saturday, we have family bonding time at the beach.']
+]
+
+const p1t3w7 = [
+  ['sign', 'Please follow the sign to get to the store.'],
+  ['stalls', 'There are many food stalls in the canteen.'],
+  ['fun', 'The children have fun playing catch.'],
+  ['lights', 'We decorate the room with beautiful lights.'],
+  ['children', 'The children carried their beautiful lanterns.'],
+  ['gather', 'Lets gather to sing the birthday song.'],
+  ['delicious mooncakes', 'During Mid-Autumn Festival, we eat delicious mooncakes.'],
+  ['celebrate', 'We celebrate National Day on 9 August.'],
+  ['bazaar', 'I won a toy at the bazaar.'],
+  ['tickets', 'I have two tickets to the movie.']
+]
+
+const p1t3w8 = [
+  ['joy', 'The children jumped with joy during the celebration'],
+  ['bake', 'My aunt can bake lovely cakes.'],
+  ['chase', 'The guard dogs chase after the burglars.'],
+  ['wave', 'My friends wave to me from across the street.'],
+  ['yummy', 'The pie is yummy! May I have another one please'],
+  ['candles', 'There are seven candles on my birthday cake.'],
+  ['lanterns and sparklers', 'During Mid-Autumn, we play with lanterns and sparklers.'],
+  ['serve tea', 'I serve tea to the guests.'],
+  ['chatting happily', 'Everyone was chatting happily at the party.'],
+  ['festival', 'Deepavali is also known as the Festival of Lights.']
+]
+
+const p1t3w9 = [
+  ['had', 'I had a great time playing at the zoo.'],
+  ['want', 'The children want to play catching outside.'],
+  ['look', '"Look at that beautiful rainbow!" said Mother.']
+  ['come', '"Will you come to my birthday party?" asked Tim.'],
+  ['will', 'I will help you pack up the toys.'],
+  ['when', 'When I went to school, I saw a blue bird.'],
+  ['and', 'Jane likes to run and jump in the playground.'],
+  ['over', 'The little bird flew over the tall, green tree.'],
+  ['from', 'I got a beautiful present from my best friend.'],
+  ['your', 'Please remember to pack your water bottle.'],
+]
+
+var questionsBank = [].concat(p1t2w3, p1t2w4, p1t2w5, p1t2w6, p1t2w7, p1t2w8, p1t2w9);
 
 questionsBank = Phaser.Actions.Shuffle(questionsBank);
 const SCORE_CAP = questionsBank.length;
