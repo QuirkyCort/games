@@ -193,10 +193,11 @@ const p1t3w9 = [
   ['your', 'Please remember to pack your water bottle.'],
 ]
 
-var questionsBank = [].concat(p1t2w3, p1t2w4, p1t2w5, p1t2w6, p1t2w7, p1t2w8, p1t2w9);
+var questionsBank = [].concat(p1t2w3, p1t2w4, p1t2w5, p1t2w6, p1t2w7, p1t2w8, p1t2w9, p1t3w2);
 
 questionsBank = Phaser.Actions.Shuffle(questionsBank);
-const SCORE_CAP = questionsBank.length;
+// const SCORE_CAP = questionsBank.length;
+const SCORE_CAP = 10;
 
 var config = {
   type: Phaser.AUTO,
