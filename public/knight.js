@@ -290,6 +290,7 @@ function preload () {
   // this.load.image('snake', 'snakelava.png');
   // this.load.image('ghost', 'ghost.png');
   loadSeries('Dragon-Idle_', 0, 7)
+  loadSeries('troll_', 0, 9)
   loadSeries('zombie_male_idle_', 1, 15);
   loadSeries('zombie_female_idle_', 1, 15);
   loadSeries('jack_idle_', 1, 10);
@@ -439,6 +440,24 @@ function create () {
     frameRate: 20,
     repeat: -1
   });
+
+  this.anims.create({
+    key: 'troll',
+    frames: [
+      { key: 'troll_0' },
+      { key: 'troll_1' },
+      { key: 'troll_2' },
+      { key: 'troll_3' },
+      { key: 'troll_4' },
+      { key: 'troll_5' },
+      { key: 'troll_6' },
+      { key: 'troll_7' },
+      { key: 'troll_8' },
+      { key: 'troll_9' }
+    ],
+    frameRate: 20,
+    repeat: -1
+  });
   // baddies.push(this.physics.add.sprite(BADDIES_START, 510, 'spider').play('spider'));
   // baddies.push(this.physics.add.sprite(BADDIES_START, 461, 'snake'));
   // baddies.push(this.physics.add.sprite(BADDIES_START, 480, 'ghost'));
@@ -449,6 +468,7 @@ function create () {
   baddies.push(this.physics.add.sprite(BADDIES_START, 475, 'goblin_female').play('goblin_female'));
   baddies.push(this.physics.add.sprite(BADDIES_START, 475, 'goblin_chief').play('goblin_chief'));
   baddies.push(this.physics.add.sprite(BADDIES_START, 450, 'dragon').play('dragon'));
+  baddies.push(this.physics.add.sprite(BADDIES_START, 430, 'troll').play('troll'));
   baddies.forEach(function(baddy) {
     baddy.body.setAllowGravity(false);
     baddy.baseY = baddy.y;
@@ -613,9 +633,11 @@ function checkAnswer() {
 
 function resetBaddies() {
   if (score == SCORE_CAP - 1) {
-    baddyType = baddies.length - 1;
+    baddyType = baddies.length - 2; // dragon
+  } else if (score == 5) {
+    baddyType = baddies.length - 1; // troll
   } else {
-    baddyType = Phaser.Math.Between(0, baddies.length - 2);
+    baddyType = Phaser.Math.Between(0, baddies.length - 3); // skip last 2 baddies
   }
 
   baddies.forEach(function(baddy) {
