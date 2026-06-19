@@ -89,7 +89,7 @@ const p1t2w9 = [ // Spelling 7. Week 9. 19 May
   ['zoomed everywhere', 'when the beehive broke, the bees zoomed everywhere.'],
 ]
 
-const p1t3w2 = [
+const p1t3w2 = [ // 7 Jul
   ['went', 'Ali went to the park to play with his friends.'],
   ['jumped', 'The frightened cat jumped over the tall wooden fence.'],
   ['found', 'Sam found a shiny coin hiding in the green grass.'],
@@ -102,10 +102,10 @@ const p1t3w2 = [
   ['people', 'There were many people waiting at the busy bus stop.']
 ]
 
-const p1t3w3 = [
+const p1t3w3 = [ // 14 Jul
   ['long', 'We have to cross a long bridge to reach the island.'],
   ['down', 'The busy ants went down the narrow tunnel.'],
-  ['Queen', 'The King and Queen have arrived at the palace.'],
+  ['queen', 'The King and Queen have arrived at the palace.'],
   ['jelly', 'The Queen is nibbling on her jelly.'],
   ['hurry', 'The Queen is hungry. Hurry, hurry, hurry!'],
   ['scurry', 'The goats scurry across the bridge.'],
@@ -115,7 +115,7 @@ const p1t3w3 = [
   ['out they came', 'One by one, out they came.']
 ]
 
-const p1t3w4 = [
+const p1t3w4 = [ // 21 Jul
   ['sip', 'I will take a small sip of cold water.'],
   ['zoom', 'Watch the fast car zoom down the road.'],
   ['bite', 'Take a big bite of the crunchy apple.'],
@@ -128,7 +128,7 @@ const p1t3w4 = [
   ['nibble', 'A tiny mouse likes to nibble on cheese.'],
 ]
 
-const p1t3w5 = [
+const p1t3w5 = [ // 28 Jul
   ['ask', 'I ask my teacher some questions.'],
   ['old', 'The old man walks slowly.'],
   ['hug', 'My parents hug me to make me feel better.'],
@@ -141,20 +141,20 @@ const p1t3w5 = [
   ['siblings', 'I am an only child. I do not have siblings.']
 ]
 
-const p1t3w6 = [
-    ['loud', 'The baby is loud when she cries.'],
-    ['carry', 'Please help me carry my books.'],
-    ['aunt', 'My aunt is my fathers sister.'],
-    ['uncle', 'My uncle is my fathers brother.'],
-    ['laugh', 'The children laugh at the jokes.']
-    ['cousins', 'Uncle John and Aunt Penny have three children. They are my cousins.'],
-    ['grandparents', 'My fathers parents are my grandparents.'],
-    ['sister', 'My sister likes to wear pink dresses.'],
-    ['brother', 'My brother is a Boy Scout.'],
-    ['bonding time', 'Every Saturday, we have family bonding time at the beach.']
+const p1t3w6 = [ // 4 Aug
+  ['loud', 'The baby is loud when she cries.'],
+  ['carry', 'Please help me carry my books.'],
+  ['aunt', 'My aunt is my fathers sister.'],
+  ['uncle', 'My uncle is my fathers brother.'],
+  ['laugh', 'The children laugh at the jokes.']
+  ['cousins', 'Uncle John and Aunt Penny have three children. They are my cousins.'],
+  ['grandparents', 'My fathers parents are my grandparents.'],
+  ['sister', 'My sister likes to wear pink dresses.'],
+  ['brother', 'My brother is a Boy Scout.'],
+  ['bonding time', 'Every Saturday, we have family bonding time at the beach.']
 ]
 
-const p1t3w7 = [
+const p1t3w7 = [ // 11 Aug
   ['sign', 'Please follow the sign to get to the store.'],
   ['stalls', 'There are many food stalls in the canteen.'],
   ['fun', 'The children have fun playing catch.'],
@@ -167,7 +167,7 @@ const p1t3w7 = [
   ['tickets', 'I have two tickets to the movie.']
 ]
 
-const p1t3w8 = [
+const p1t3w8 = [ // 18 Aug
   ['joy', 'The children jumped with joy during the celebration'],
   ['bake', 'My aunt can bake lovely cakes.'],
   ['chase', 'The guard dogs chase after the burglars.'],
@@ -180,7 +180,7 @@ const p1t3w8 = [
   ['festival', 'Deepavali is also known as the Festival of Lights.']
 ]
 
-const p1t3w9 = [
+const p1t3w9 = [ // 25 Aug
   ['had', 'I had a great time playing at the zoo.'],
   ['want', 'The children want to play catching outside.'],
   ['look', '"Look at that beautiful rainbow!" said Mother.']
@@ -193,7 +193,7 @@ const p1t3w9 = [
   ['your', 'Please remember to pack your water bottle.'],
 ]
 
-var questionsBank = [].concat(p1t2w3, p1t2w4, p1t2w5, p1t2w6, p1t2w7, p1t2w8, p1t2w9, p1t3w2);
+var questionsBank = [].concat(p1t3w2, p1t3w3, p1t3w4);
 
 questionsBank = Phaser.Actions.Shuffle(questionsBank);
 // const SCORE_CAP = questionsBank.length;
