@@ -193,7 +193,7 @@ const p1t3w9 = [ // 25 Aug
   ['your', 'Please remember to pack your water bottle.'],
 ]
 
-var questionsBank = [].concat(p1t3w2, p1t3w3, p1t3w4);
+var questionsBank = [].concat(p1t3w2);
 
 questionsBank = Phaser.Actions.Shuffle(questionsBank);
 // const SCORE_CAP = questionsBank.length;
@@ -634,7 +634,7 @@ function checkAnswer() {
 function resetBaddies() {
   if (score == SCORE_CAP - 1) {
     baddyType = baddies.length - 2; // dragon
-  } else if (score == 5) {
+  } else if (score == 4) {
     baddyType = baddies.length - 1; // troll
   } else {
     baddyType = Phaser.Math.Between(0, baddies.length - 3); // skip last 2 baddies
