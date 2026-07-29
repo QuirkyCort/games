@@ -146,7 +146,7 @@ const p1t3w6 = [ // 4 Aug
   ['carry', 'Please help me carry my books.'],
   ['aunt', 'My aunt is my fathers sister.'],
   ['uncle', 'My uncle is my fathers brother.'],
-  ['laugh', 'The children laugh at the jokes.']
+  ['laugh', 'The children laugh at the jokes.'],
   ['cousins', 'Uncle John and Aunt Penny have three children. They are my cousins.'],
   ['grandparents', 'My fathers parents are my grandparents.'],
   ['sister', 'My sister likes to wear pink dresses.'],
@@ -183,7 +183,7 @@ const p1t3w8 = [ // 18 Aug
 const p1t3w9 = [ // 25 Aug
   ['had', 'I had a great time playing at the zoo.'],
   ['want', 'The children want to play catching outside.'],
-  ['look', '"Look at that beautiful rainbow!" said Mother.']
+  ['look', '"Look at that beautiful rainbow!" said Mother.'],
   ['come', '"Will you come to my birthday party?" asked Tim.'],
   ['will', 'I will help you pack up the toys.'],
   ['when', 'When I went to school, I saw a blue bird.'],
