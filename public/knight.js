@@ -274,8 +274,15 @@ function preload () {
   }
 
   loadSeries('background', 1, 3);
-  loadSeries('Run', 1, 9);
-  this.load.image('Jump', 'Jump.png');
+
+  // knight
+  // loadSeries('Run', 1, 9);
+  // this.load.image('Jump', 'Jump.png');
+
+  // rayman
+  loadSeries('rayman00', 0, 7);
+  this.load.image('Jump', 'rayman_punch.png');
+
   this.load.image('Dead', 'Dead0.png');
   this.load.image('gameOver', 'gameOver.png');
   this.load.image('intro', 'intro.png');
@@ -288,14 +295,19 @@ function preload () {
   // loadSeries('spider_walk', 1, 2);
   // this.load.image('snake', 'snakelava.png');
   // this.load.image('ghost', 'ghost.png');
-  loadSeries('Dragon-Idle_', 0, 7)
-  loadSeries('troll_', 0, 9)
-  loadSeries('zombie_male_idle_', 1, 15);
-  loadSeries('zombie_female_idle_', 1, 15);
-  loadSeries('jack_idle_', 1, 10);
-  this.load.spritesheet('goblin_male_idle', 'goblin_male_idle.png', { frameWidth: 200, frameHeight: 200 });
-  this.load.spritesheet('goblin_female_idle', 'goblin_female_idle.png', { frameWidth: 200, frameHeight: 200 });
-  this.load.spritesheet('goblin_chief_idle', 'goblin_chief_idle.png', { frameWidth: 200, frameHeight: 200 });
+  // loadSeries('zombie_male_idle_', 1, 15);
+  // loadSeries('zombie_female_idle_', 1, 15);
+  // loadSeries('jack_idle_', 1, 10);
+  // this.load.spritesheet('goblin_male_idle', 'goblin_male_idle.png', { frameWidth: 200, frameHeight: 200 });
+  // this.load.spritesheet('goblin_female_idle', 'goblin_female_idle.png', { frameWidth: 200, frameHeight: 200 });
+  // this.load.spritesheet('goblin_chief_idle', 'goblin_chief_idle.png', { frameWidth: 200, frameHeight: 200 });
+  // loadSeries('troll_', 0, 9);
+  // loadSeries('Dragon-Idle_', 0, 7);
+
+  loadSeries('rabbid_eyes_', 0, 3);
+  loadSeries('rabbid_ahh_', 0, 2);
+  loadSeries('rabbid_zombie_', 0, 4);
+  this.load.image('rabbid_bot', 'rabbid_bot.png');
 
   this.load.spritesheet('fullscreen', 'fullscreen.png', { frameWidth: 64, frameHeight: 64 });
 
@@ -334,7 +346,8 @@ function create () {
   // Ninja
   this.anims.create({
     key: 'run',
-    frames: genFrames('Run', 1, 9),
+    // frames: genFrames('Run', 1, 9),
+    frames: genFrames('rayman00', 0, 7),
     frameRate: 30,
     repeat: -1
   });
@@ -357,7 +370,13 @@ function create () {
     repeat: 0
   });
 
-  ninja = this.physics.add.sprite(120, -200, 'Run1').play('run');
+  // ninja = this.physics.add.sprite(120, -200, 'Run1').play('run');
+  
+  // Rayman
+  ninja = this.physics.add.sprite(120, -200, 'rayman000').play('run');
+  ninja.scale = 2;
+  ninja.scaleX = -2;
+
   ninja.body.enable = false;
 
   // Baddies
@@ -370,104 +389,157 @@ function create () {
   //   frameRate: 10,
   //   repeat: -1
   // });
+  // let frames = [];
+  // for (let i=1; i<=15; i++) {
+  //   frames.push({ key: 'zombie_male_idle_' + i });
+  // }
+  // this.anims.create({
+  //   key: 'zombie_male',
+  //   frames: frames,
+  //   frameRate: 10,
+  //   repeat: -1
+  // });
+
+  // frames = [];
+  // for (let i=1; i<=15; i++) {
+  //   frames.push({ key: 'zombie_female_idle_' + i });
+  // }
+  // this.anims.create({
+  //   key: 'zombie_female',
+  //   frames: frames,
+  //   frameRate: 10,
+  //   repeat: -1
+  // });
+
+  // frames = [];
+  // for (let i=1; i<=10; i++) {
+  //   frames.push({ key: 'jack_idle_' + i });
+  // }
+  // this.anims.create({
+  //   key: 'jack',
+  //   frames: frames,
+  //   frameRate: 10,
+  //   repeat: -1
+  // });
+
+  // this.anims.create({
+  //   key: 'goblin_male',
+  //   frames: 'goblin_male_idle',
+  //   frameRate: 10,
+  //   repeat: -1
+  // });
+
+  // this.anims.create({
+  //   key: 'goblin_female',
+  //   frames: 'goblin_female_idle',
+  //   frameRate: 10,
+  //   repeat: -1
+  // });
+
+  // this.anims.create({
+  //   key: 'goblin_chief',
+  //   frames: 'goblin_chief_idle',
+  //   frameRate: 10,
+  //   repeat: -1
+  // });
+
   let frames = [];
-  for (let i=1; i<=15; i++) {
-    frames.push({ key: 'zombie_male_idle_' + i });
+  for (let i=0; i<=3; i++) {
+    frames.push({ key: 'rabbid_eyes_' + i });
   }
   this.anims.create({
-    key: 'zombie_male',
+    key: 'rabbid_eyes',
     frames: frames,
-    frameRate: 10,
+    frameRate: 4,
     repeat: -1
   });
 
   frames = [];
-  for (let i=1; i<=15; i++) {
-    frames.push({ key: 'zombie_female_idle_' + i });
+  for (let i=0; i<=2; i++) {
+    frames.push({ key: 'rabbid_ahh_' + i });
   }
   this.anims.create({
-    key: 'zombie_female',
+    key: 'rabbid_ahh',
     frames: frames,
-    frameRate: 10,
+    frameRate: 20,
     repeat: -1
   });
 
   frames = [];
-  for (let i=1; i<=10; i++) {
-    frames.push({ key: 'jack_idle_' + i });
+  for (let i=0; i<=4; i++) {
+    frames.push({ key: 'rabbid_zombie_' + i });
   }
   this.anims.create({
-    key: 'jack',
+    key: 'rabbid_zombie',
     frames: frames,
-    frameRate: 10,
+    frameRate: 5,
     repeat: -1
   });
 
-  this.anims.create({
-    key: 'goblin_male',
-    frames: 'goblin_male_idle',
-    frameRate: 10,
-    repeat: -1
-  });
+  // this.anims.create({
+  //   key: 'dragon',
+  //   frames: [
+  //     { key: 'Dragon-Idle_0' },
+  //     { key: 'Dragon-Idle_1' },
+  //     { key: 'Dragon-Idle_2' },
+  //     { key: 'Dragon-Idle_3' },
+  //     { key: 'Dragon-Idle_4' },
+  //     { key: 'Dragon-Idle_5' },
+  //     { key: 'Dragon-Idle_6' },
+  //     { key: 'Dragon-Idle_7' }
+  //   ],
+  //   frameRate: 20,
+  //   repeat: -1
+  // });
 
-  this.anims.create({
-    key: 'goblin_female',
-    frames: 'goblin_female_idle',
-    frameRate: 10,
-    repeat: -1
-  });
-
-  this.anims.create({
-    key: 'goblin_chief',
-    frames: 'goblin_chief_idle',
-    frameRate: 10,
-    repeat: -1
-  });
-
-  this.anims.create({
-    key: 'dragon',
-    frames: [
-      { key: 'Dragon-Idle_0' },
-      { key: 'Dragon-Idle_1' },
-      { key: 'Dragon-Idle_2' },
-      { key: 'Dragon-Idle_3' },
-      { key: 'Dragon-Idle_4' },
-      { key: 'Dragon-Idle_5' },
-      { key: 'Dragon-Idle_6' },
-      { key: 'Dragon-Idle_7' }
-    ],
-    frameRate: 20,
-    repeat: -1
-  });
-
-  this.anims.create({
-    key: 'troll',
-    frames: [
-      { key: 'troll_0' },
-      { key: 'troll_1' },
-      { key: 'troll_2' },
-      { key: 'troll_3' },
-      { key: 'troll_4' },
-      { key: 'troll_5' },
-      { key: 'troll_6' },
-      { key: 'troll_7' },
-      { key: 'troll_8' },
-      { key: 'troll_9' }
-    ],
-    frameRate: 20,
-    repeat: -1
-  });
+  // this.anims.create({
+  //   key: 'troll',
+  //   frames: [
+  //     { key: 'troll_0' },
+  //     { key: 'troll_1' },
+  //     { key: 'troll_2' },
+  //     { key: 'troll_3' },
+  //     { key: 'troll_4' },
+  //     { key: 'troll_5' },
+  //     { key: 'troll_6' },
+  //     { key: 'troll_7' },
+  //     { key: 'troll_8' },
+  //     { key: 'troll_9' }
+  //   ],
+  //   frameRate: 20,
+  //   repeat: -1
+  // });
   // baddies.push(this.physics.add.sprite(BADDIES_START, 510, 'spider').play('spider'));
   // baddies.push(this.physics.add.sprite(BADDIES_START, 461, 'snake'));
   // baddies.push(this.physics.add.sprite(BADDIES_START, 480, 'ghost'));
-  baddies.push(this.physics.add.sprite(BADDIES_START, 460, 'zombie_male').play('zombie_male'));
-  baddies.push(this.physics.add.sprite(BADDIES_START, 460, 'zombie_female').play('zombie_female'));
-  baddies.push(this.physics.add.sprite(BADDIES_START, 460, 'jack').play('jack'));
-  baddies.push(this.physics.add.sprite(BADDIES_START, 475, 'goblin_male').play('goblin_male'));
-  baddies.push(this.physics.add.sprite(BADDIES_START, 475, 'goblin_female').play('goblin_female'));
-  baddies.push(this.physics.add.sprite(BADDIES_START, 475, 'goblin_chief').play('goblin_chief'));
-  baddies.push(this.physics.add.sprite(BADDIES_START, 450, 'dragon').play('dragon'));
-  baddies.push(this.physics.add.sprite(BADDIES_START, 430, 'troll').play('troll'));
+  // baddies.push(this.physics.add.sprite(BADDIES_START, 460, 'zombie_male').play('zombie_male'));
+  // baddies.push(this.physics.add.sprite(BADDIES_START, 460, 'zombie_female').play('zombie_female'));
+  // baddies.push(this.physics.add.sprite(BADDIES_START, 460, 'jack').play('jack'));
+  // baddies.push(this.physics.add.sprite(BADDIES_START, 475, 'goblin_male').play('goblin_male'));
+  // baddies.push(this.physics.add.sprite(BADDIES_START, 475, 'goblin_female').play('goblin_female'));
+  // baddies.push(this.physics.add.sprite(BADDIES_START, 475, 'goblin_chief').play('goblin_chief'));
+  // baddies.push(this.physics.add.sprite(BADDIES_START, 450, 'dragon').play('dragon'));
+  // baddies.push(this.physics.add.sprite(BADDIES_START, 430, 'troll').play('troll'));
+
+  let rabbidEyes = this.physics.add.sprite(BADDIES_START, 489, 'rabbid_eyes').play('rabbid_eyes');
+  rabbidEyes.scale = 2;
+  baddies.push(rabbidEyes);
+
+  let rabbidAhh = this.physics.add.sprite(BADDIES_START, 489, 'rabbid_ahh').play('rabbid_ahh');
+  rabbidAhh.scale = 2;
+  baddies.push(rabbidAhh);
+
+  // Last boss
+  let rabbidBot = this.physics.add.sprite(BADDIES_START, 445, 'rabbid_bot');
+  rabbidBot.scale = 0.8;
+  baddies.push(rabbidBot);
+
+  // Mid boss
+  let rabbidZombie = this.physics.add.sprite(BADDIES_START, 465, 'rabbid_zombie').play('rabbid_zombie');
+  rabbidZombie.scale = 3;
+  rabbidZombie.scaleX = -3;
+  baddies.push(rabbidZombie);
+
   baddies.forEach(function(baddy) {
     baddy.body.setAllowGravity(false);
     baddy.baseY = baddy.y;
@@ -477,7 +549,8 @@ function create () {
   intro = this.add.image(400, -200, 'intro').setInteractive();
   intro.on('pointerdown', function () {
     state.setState(state.RUN);
-    ninja.y = 455;
+    // ninja.y = 455;
+    ninja.y = 490;
     intro.tweenRise.play();
     themes[themeIndex].play({ loop: true });
   });
