@@ -278,12 +278,13 @@ function preload () {
   // knight
   // loadSeries('Run', 1, 9);
   // this.load.image('Jump', 'Jump.png');
+  // this.load.image('Dead', 'Dead0.png');
 
   // rayman
   loadSeries('rayman00', 0, 7);
   this.load.image('Jump', 'rayman_punch.png');
 
-  this.load.image('Dead', 'Dead0.png');
+  this.load.image('Dead', 'rayman_hurt.png');
   this.load.image('gameOver', 'gameOver.png');
   this.load.image('intro', 'intro.png');
   this.load.image('questionBackground', 'questionBackground.png');
