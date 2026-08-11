@@ -765,6 +765,15 @@ function update (time, delta) {
       for (let i=0; i<questionsBank[score][0].length; i++) {
         placeholderText += '_';
       }
+
+      if (questionsBank[score][0].length > 20) {
+        answerText.setFontSize(38);
+      } else if (questionsBank[score][0].length > 12) {
+        answerText.setFontSize(45);
+      } else {
+        answerText.setFontSize(50);
+      }
+
       answerText.setText(placeholderText);
       state.setState(state.SLOW);
     }
