@@ -193,7 +193,85 @@ const p1t3w9 = [ // 25 Aug
   ['your', 'Please remember to pack your water bottle.'],
 ]
 
-var questionsBank = [].concat(p1t3w8);
+const p1t4w2 = [ // 22 Sep
+  ['celebrate', 'We went to our grandparents house to celebrate Hari Raya.'],
+  ['delicious', 'We ate delicious lontong and rendang for breakfast'],
+  ['naughty', 'My naughty brother kept playing with his toys.'],
+  ['pockets', 'My baju kurung has three pockets'],
+  ['children', 'The children were happy to eat all the tasty goodies mother made.'],
+  ['kneels', 'Ahmad kneels in front of his parents to ask for their forgiveness'],
+  ['dressed', 'Everyone was dressed in their traditional clothes.'],
+  ['green packet', 'Grandma gave each child a green packet'],
+  ['juicy oranges', 'Mother cut some juicy oranges for us to eat'],
+  ['pineapple tarts', 'Auntie May made pineapple tarts for us'],
+]
+
+const p1t4w3 = [ // 29 Sep
+  ['visit', 'Lets visit Grandma this weekend'],
+  ['give', 'Please give me another day to complete my work.'],
+  ['put on', 'Lets put on our jackets before we enter the cinema'],
+  ['kneel', 'The children kneel to seek forgiveness.'],
+  ['prepared', 'I prepared some food for the party.'],
+  ['new clothes', 'My mother bought some new clothes for Hari Raya.'],
+  ['green packets', 'During Hari Raya, I receive green packets from my grandparents'],
+  ['exchange oranges', 'During Chinese New Year, we visit our relatives and exchange oranges'],
+  ['well wishes', 'On my birthday, I received many well wishes from my friends.'],
+  ['joyous occasion', 'On this joyous occasion, we celebrate Grandpas ninetieth birthday.'],
+]
+
+const p1t4w4 = [ // 6 Oct
+  ['lazy', 'The lazy boy does nothing to help his mother.'],
+  ['waddled', 'The duck waddled around the pond.'],
+  ['busy', 'Father is busy with his work. Please do not disturb him.'],
+  ['farmhouse', 'Farmer Jon lives in a big farmhouse with his animals.'],
+  ['garden', 'Mother planted many flowers in the garden.'],
+  ['weeds and thistles', 'The gardener is plucking the weeds and thistles in the garden.'],
+  ['prowled', 'The cat prowled the alley at night, searching for rats.'],
+  ['scratched', 'My pet cat scratched my hand with its claws.'],
+  ['hoe', 'The gardener is digging the soil with a hoe.'],
+  ['as hardworking as an ant', 'Annie is as hardworking as an ant. She spend her free time revising her work.'],
+]
+
+const p1t4w6 = [ // 20 Oct
+  ['farmyard', 'Lazy Duck waddled around the farmyard.'],
+  ['animals', 'He watched the animals as they worked.'],
+  ['watched', 'During the learning journey, the class watched how the animals ate.'],
+  ['luck', 'You do the work and I have the luck.'],
+  ['scraped', 'The hens scratched and scraped to find food.'],
+  ['sheep', 'The dog ran around getting the sheep.'],
+  ['pot', 'The farmers wanted to put the duck in the pot for tea.'],
+  ['please', '"Help me, please!" cried Lazy Duck.'],
+  ['beetles', 'Lazy Duck started cleaning up the beetles and bugs.'],
+  ['lucky', 'The farmers said he was a lucky, busy duck.'],
+]
+
+const p1t4w7 = [ // 27 Oct
+  ['birthday', 'There are seven candles on my birthday cake'],
+  ['hose', 'Uncle Jon used the hose to water the plants.'],
+  ['gardener', 'The gardener takes good care of the plants such that they grow healthily.'],
+  ['chef', 'The chef can cook many delicious dishes.'],
+  ['pant heavily', 'The children pant heavily as they climb up to the fourth storey.'],
+  ['huffed and puffed', 'The Big Bad Wolf huffed and puffed and tried to blow the house down.'],
+  ['waggled his head', 'Pete waggled his head when his mother asked if he had finished his food.'],
+  ['squirted the water', 'Who was the one who squirted the water at me? I am all wet!'],
+  ['took a deep breath', 'Annie took a deep breath before she went up the stage to sing to the audience.'],
+  ['offered to help', 'The helpful boy offered to help the old lady carry her heavy bags.'],
+]
+
+const p1t4w8 = [ // 3 Nov
+  ['hide', 'The children hide their toys in the cupboard so that Mother will not find them.'],
+  ['secret', 'Please keep this a secret. Do not tell anyone else.'],
+  ['bangle', 'Anita wore a bangle on her left wrist.'],
+  ['broken', 'The table is broken. We cannot use it anymore.'],
+  ['lied', 'Tom lied to his mother that he had completed his work when he had not.'],
+  ['felt guilty', 'Punitha felt quilty after telling a lie to her mother.'],
+  ['shiny', 'My mother wears a shiny ring on her finger.'],
+  ['dishonest', 'The dishonest child took something which did not belong to her.'],
+  ['owned up to her mistake', 'She owned up to her mistake and told her parents that she was sorry for what she had done wrong.'],
+  ['sparkle and shine', 'The windows sparkle and shine after I have cleaned them.'],
+]
+
+var questionsBank = [].concat(p1t4w2, p1t4w3, p1t4w4, p1t4w6, p1t4w7, p1t4w8);
 
 questionsBank = Phaser.Actions.Shuffle(questionsBank);
 // const SCORE_CAP = questionsBank.length;
@@ -766,7 +844,9 @@ function update (time, delta) {
         placeholderText += '_';
       }
 
-      if (questionsBank[score][0].length > 20) {
+      if (questionsBank[score][0].length > 22) {
+        answerText.setFontSize(34);
+      } else if (questionsBank[score][0].length > 18) {
         answerText.setFontSize(38);
       } else if (questionsBank[score][0].length > 12) {
         answerText.setFontSize(45);
