@@ -271,7 +271,7 @@ const p1t4w8 = [ // 3 Nov
   ['sparkle and shine', 'The windows sparkle and shine after I have cleaned them.'],
 ]
 
-var questionsBank = [].concat(p1t4w2, p1t4w3, p1t4w4, p1t4w6, p1t4w7, p1t4w8);
+var questionsBank = [].concat(p1t4w2);
 
 questionsBank = Phaser.Actions.Shuffle(questionsBank);
 // const SCORE_CAP = questionsBank.length;
@@ -312,7 +312,7 @@ var timeScale = 1.0;
 var baddies = [];
 var baddyType = 0;
 var answerState = 'pending';
-var slowTimeScale = 0.1;
+var slowTimeScale = 0.08;
 var answerText;
 const synth = window.speechSynthesis;
 
