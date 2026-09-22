@@ -271,7 +271,7 @@ const p1t4w8 = [ // 3 Nov
   ['sparkle and shine', 'The windows sparkle and shine after I have cleaned them.'],
 ]
 
-var questionsBank = [].concat(p1t4w2);
+var questionsBank = [].concat(p1t4w3);
 
 questionsBank = Phaser.Actions.Shuffle(questionsBank);
 // const SCORE_CAP = questionsBank.length;
@@ -390,7 +390,8 @@ function preload () {
 
   this.load.spritesheet('fullscreen', 'fullscreen.png', { frameWidth: 64, frameHeight: 64 });
 
-  this.load.audio('theme1', 'fight_looped.mp3');
+  // this.load.audio('theme1', 'fight_looped.mp3');
+  this.load.audio('theme1', 'level_3.mp3');
 }
 
 function create () {
