@@ -313,6 +313,7 @@ var baddies = [];
 var baddyType = 0;
 var answerState = 'pending';
 var slowTimeScale = 0.08;
+var musicVolume = 0.8;
 var answerText;
 const synth = window.speechSynthesis;
 
@@ -717,7 +718,7 @@ function create () {
 
   // Set up background music
   themes.push(this.sound.add('theme1'));
-  themes[0].volume = 0.8;
+  themes[0].volume = musicVolume;
 }
 
 function restart() {
@@ -890,10 +891,10 @@ function update (time, delta) {
     if (question.y > -410) {
       question.y -= 40;
     }
-    if (themes[themeIndex].volume < 0.8) {
+    if (themes[themeIndex].volume < musicVolume) {
       themes[themeIndex].volume += 0.02001;
-      if (themes[themeIndex].volume > 0.8) {
-        themes[themeIndex].volume = 0.8;
+      if (themes[themeIndex].volume > musicVolume) {
+        themes[themeIndex].volume = musicVolume;
       }
     }
 
