@@ -313,7 +313,7 @@ var baddies = [];
 var baddyType = 0;
 var answerState = 'pending';
 var slowTimeScale = 0.08;
-var musicVolume = 0.5;
+var musicVolume = 0.3;
 var answerText;
 const synth = window.speechSynthesis;
 
