@@ -313,7 +313,7 @@ var baddies = [];
 var baddyType = 0;
 var answerState = 'pending';
 var slowTimeScale = 0.08;
-var musicVolume = 0.3;
+var musicVolume = 0.1;
 var answerText;
 const synth = window.speechSynthesis;
 
@@ -360,10 +360,15 @@ function preload () {
   // this.load.image('Dead', 'Dead0.png');
 
   // rayman
-  loadSeries('rayman00', 0, 7);
-  this.load.image('Jump', 'rayman_punch.png');
+  // loadSeries('rayman00', 0, 7);
+  // this.load.image('Jump', 'rayman_punch.png');
+  // this.load.image('Dead', 'rayman_hurt.png');
 
-  this.load.image('Dead', 'rayman_hurt.png');
+  // kayleigh
+  loadSeries('kayleigh_00', 0, 5);
+  this.load.image('Jump', 'kayleigh_attack.png');
+  this.load.image('Dead', 'kayleigh_dead.png');
+
   this.load.image('gameOver', 'gameOver.png');
   this.load.image('intro', 'intro.png');
   this.load.image('questionBackground', 'questionBackground.png');
@@ -384,10 +389,15 @@ function preload () {
   // loadSeries('troll_', 0, 9);
   // loadSeries('Dragon-Idle_', 0, 7);
 
-  loadSeries('rabbid_eyes_', 0, 3);
-  loadSeries('rabbid_ahh_', 0, 2);
-  loadSeries('rabbid_zombie_', 0, 4);
-  this.load.image('rabbid_bot', 'rabbid_bot.png');
+  // loadSeries('rabbid_eyes_', 0, 3);
+  // loadSeries('rabbid_ahh_', 0, 2);
+  // loadSeries('rabbid_zombie_', 0, 4);
+  // this.load.image('rabbid_bot', 'rabbid_bot.png');
+
+  loadSeries('magikrab_', 0, 5)
+  loadSeries('cat5_00', 0, 5)
+  loadSeries('kuneko_00', 0, 5)
+  loadSeries('ramtasm_00', 0, 5)
 
   this.load.spritesheet('fullscreen', 'fullscreen.png', { frameWidth: 64, frameHeight: 64 });
 
@@ -427,8 +437,9 @@ function create () {
   // Ninja
   this.anims.create({
     key: 'run',
-    // frames: genFrames('Run', 1, 9),
-    frames: genFrames('rayman00', 0, 7),
+    // frames: genFrames('Run', 1, 9), // Ninja
+    // frames: genFrames('rayman00', 0, 7), // Rayman
+    frames: genFrames('kayleigh_00', 0, 5), // kayleigh
     frameRate: 30,
     repeat: -1
   });
@@ -454,9 +465,13 @@ function create () {
   // ninja = this.physics.add.sprite(120, -200, 'Run1').play('run');
   
   // Rayman
-  ninja = this.physics.add.sprite(120, -200, 'rayman000').play('run');
-  ninja.scale = 2;
-  ninja.scaleX = -2;
+  // ninja = this.physics.add.sprite(120, -200, 'rayman000').play('run');
+  // ninja.scale = 2;
+  // ninja.scaleX = -2;
+
+  // Kayleigh
+  ninja = this.physics.add.sprite(120, -200, 'kayleigh_000').play('run');
+  ninja.scale = 3;
 
   ninja.body.enable = false;
 
@@ -524,38 +539,82 @@ function create () {
   //   repeat: -1
   // });
 
+  // let frames = [];
+  // for (let i=0; i<=3; i++) {
+  //   frames.push({ key: 'rabbid_eyes_' + i });
+  // }
+  // this.anims.create({
+  //   key: 'rabbid_eyes',
+  //   frames: frames,
+  //   frameRate: 4,
+  //   repeat: -1
+  // });
+
+  // frames = [];
+  // for (let i=0; i<=2; i++) {
+  //   frames.push({ key: 'rabbid_ahh_' + i });
+  // }
+  // this.anims.create({
+  //   key: 'rabbid_ahh',
+  //   frames: frames,
+  //   frameRate: 20,
+  //   repeat: -1
+  // });
+  // frames = [];
+  // for (let i=0; i<=4; i++) {
+  //   frames.push({ key: 'rabbid_zombie_' + i });
+  // }
+  // this.anims.create({
+  //   key: 'rabbid_zombie',
+  //   frames: frames,
+  //   frameRate: 5,
+  //   repeat: -1
+  // });
+
   let frames = [];
-  for (let i=0; i<=3; i++) {
-    frames.push({ key: 'rabbid_eyes_' + i });
+  for (let i=0; i<=5; i++) {
+    frames.push({ key: 'magikrab_' + i });
   }
   this.anims.create({
-    key: 'rabbid_eyes',
+    key: 'magikrab',
     frames: frames,
     frameRate: 4,
     repeat: -1
   });
 
   frames = [];
-  for (let i=0; i<=2; i++) {
-    frames.push({ key: 'rabbid_ahh_' + i });
+  for (let i=0; i<=5; i++) {
+    frames.push({ key: 'cat5_00' + i });
   }
   this.anims.create({
-    key: 'rabbid_ahh',
+    key: 'cat5',
     frames: frames,
-    frameRate: 20,
+    frameRate: 4,
     repeat: -1
   });
 
   frames = [];
-  for (let i=0; i<=4; i++) {
-    frames.push({ key: 'rabbid_zombie_' + i });
+  for (let i=0; i<=5; i++) {
+    frames.push({ key: 'kuneko_00' + i });
   }
   this.anims.create({
-    key: 'rabbid_zombie',
+    key: 'kuneko',
     frames: frames,
-    frameRate: 5,
+    frameRate: 4,
     repeat: -1
   });
+
+  frames = [];
+  for (let i=0; i<=5; i++) {
+    frames.push({ key: 'ramtasm_00' + i });
+  }
+  this.anims.create({
+    key: 'ramtasm',
+    frames: frames,
+    frameRate: 4,
+    repeat: -1
+  });
+
 
   // this.anims.create({
   //   key: 'dragon',
@@ -602,24 +661,42 @@ function create () {
   // baddies.push(this.physics.add.sprite(BADDIES_START, 450, 'dragon').play('dragon'));
   // baddies.push(this.physics.add.sprite(BADDIES_START, 430, 'troll').play('troll'));
 
-  let rabbidEyes = this.physics.add.sprite(BADDIES_START, 489, 'rabbid_eyes').play('rabbid_eyes');
-  rabbidEyes.scale = 2;
-  baddies.push(rabbidEyes);
+  // let rabbidEyes = this.physics.add.sprite(BADDIES_START, 489, 'rabbid_eyes').play('rabbid_eyes');
+  // rabbidEyes.scale = 2;
+  // baddies.push(rabbidEyes);
 
-  let rabbidAhh = this.physics.add.sprite(BADDIES_START, 489, 'rabbid_ahh').play('rabbid_ahh');
-  rabbidAhh.scale = 2;
-  baddies.push(rabbidAhh);
+  // let rabbidAhh = this.physics.add.sprite(BADDIES_START, 489, 'rabbid_ahh').play('rabbid_ahh');
+  // rabbidAhh.scale = 2;
+  // baddies.push(rabbidAhh);
 
   // Last boss
-  let rabbidBot = this.physics.add.sprite(BADDIES_START, 445, 'rabbid_bot');
-  rabbidBot.scale = 0.8;
-  baddies.push(rabbidBot);
+  // let rabbidBot = this.physics.add.sprite(BADDIES_START, 445, 'rabbid_bot');
+  // rabbidBot.scale = 0.8;
+  // baddies.push(rabbidBot);
 
   // Mid boss
-  let rabbidZombie = this.physics.add.sprite(BADDIES_START, 465, 'rabbid_zombie').play('rabbid_zombie');
-  rabbidZombie.scale = 3;
-  rabbidZombie.scaleX = -3;
-  baddies.push(rabbidZombie);
+  // let rabbidZombie = this.physics.add.sprite(BADDIES_START, 465, 'rabbid_zombie').play('rabbid_zombie');
+  // rabbidZombie.scale = 3;
+  // rabbidZombie.scaleX = -3;
+  // baddies.push(rabbidZombie);
+
+  let magikrab = this.physics.add.sprite(BADDIES_START, 489, 'magikrab').play('magikrab');
+  magikrab.scale = 2;
+  baddies.push(magikrab);
+
+  let cat5 = this.physics.add.sprite(BADDIES_START, 470, 'cat5').play('cat5');
+  cat5.scale = 2;
+  baddies.push(cat5);
+
+  // Last boss
+  let ramtasm = this.physics.add.sprite(BADDIES_START, 450, 'ramtasm').play('ramtasm');
+  ramtasm.scale = 2;
+  baddies.push(ramtasm);
+
+  // Mid boss
+  let kuneko = this.physics.add.sprite(BADDIES_START, 460, 'kuneko').play('kuneko');
+  kuneko.scale = 2;
+  baddies.push(kuneko);
 
   baddies.forEach(function(baddy) {
     baddy.body.setAllowGravity(false);
@@ -630,8 +707,9 @@ function create () {
   intro = this.add.image(400, -200, 'intro').setInteractive();
   intro.on('pointerdown', function () {
     state.setState(state.RUN);
-    // ninja.y = 455;
-    ninja.y = 490;
+    // ninja.y = 455; // knight
+    // ninja.y = 490; // rayman
+    ninja.y = 470; // kayleigh
     intro.tweenRise.play();
     themes[themeIndex].play({ loop: true });
   });
