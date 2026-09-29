@@ -271,7 +271,7 @@ const p1t4w8 = [ // 3 Nov
   ['sparkle and shine', 'The windows sparkle and shine after I have cleaned them.'],
 ]
 
-var questionsBank = [].concat(p1t4w3);
+var questionsBank = [].concat(p1t4w4);
 
 questionsBank = Phaser.Actions.Shuffle(questionsBank);
 // const SCORE_CAP = questionsBank.length;
