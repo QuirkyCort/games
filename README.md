@@ -1,26 +1,26 @@
 # games
 Demo games and games for my kids
 
-[knight.html](public/knight.html)
+[knight.html](knight.html)
 
-[knight.js](public/knight.js)
+[knight.js](knight.js)
 
-[ninja.html](public/ninja.html)
+[ninja.html](ninja.html)
 
-[ufo.html](public/ufo.html)
+[ufo.html](ufo.html)
 
-[dodge](public/dodge)
+[dodge](dodge)
 
-[dodgeAdv](public/dodgeAdv)
+[dodgeAdv](dodgeAdv)
 
-[gelda](public/gelda)
+[gelda](gelda)
 
-[geldaAdv](public/geldaAdv)
+[geldaAdv](geldaAdv)
 
-[geldaAdv2](public/geldaAdv2)
+[geldaAdv2](geldaAdv2)
 
-[maze](public/maze)
+[maze](maze)
 
-[racer](public/racer)
+[racer](racer)
 
-[racer2](public/racer2)
+[racer2](racer2)
